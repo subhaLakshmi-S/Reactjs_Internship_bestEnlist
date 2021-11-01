@@ -1,0 +1,37 @@
+<html>
+<body>
+<h1 style="color: green;">
+	Best Enlist
+</h1>
+<h3>
+	Program to calculate days left until
+	next Christmas using JavaScript?
+</h3>
+<script>
+	
+	let today = new Date();
+
+	let christmasYear = today.getFullYear();
+
+	
+	if (today.getMonth() == 11 && today.getDate() > 25) {
+	    christmasYear = christmasYear + 1;
+	}
+
+	
+	let christmasDate =
+		new Date(christmasYear, 11, 25);
+
+	// Get the number of milliseconds in 1 day
+	let dayMilliseconds =
+		1000 * 60 * 60 * 24;
+
+	// Get the remaining amount of days
+	let remainingDays = Math.ceil((christmasDate.getTime() - today.getTime()) /(dayMilliseconds));
+
+	// Write it to the page
+	document.write("There are " + remainingDays +
+				" days remaining until Christmas.");
+</script>
+</body>
+</html>
